@@ -1,0 +1,28 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm *)",
+      "Bash(npx *)",
+      "Bash(git *)",
+      "Bash(node *)"
+    ],
+    "deny": [
+      "Bash(rm -rf /)",
+      "Bash(sudo *)",
+      "Edit(.env*)"
+    ]
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node -e \"const p=require('path'),f=JSON.parse(require('fs').readFileSync('/dev/stdin','utf8')).tool_input.file_path;if(['.ts','.tsx','.js','.jsx'].includes(p.extname(f))){require('child_process').execSync('npx prettier --write \"'+f+'\" 2>/dev/null',{stdio:'inherit'})}\" 2>/dev/null || true"
+          }
+        ]
+      }
+    ]
+  }
+}

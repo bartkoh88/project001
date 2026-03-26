@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p \"E:/OneDrive - 넥스큐브코퍼레이션/VibeCoding2026/.claude/skills/commit\")",
+      "Bash(mkdir -p \"E:/OneDrive - 넥스큐브코퍼레이션/VibeCoding2026/.claude/skills/review\")",
+      "Bash(npx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir --turbopack --import-alias \"@/*\" --yes)",
+      "Bash(npx create-next-app@latest app --typescript --tailwind --eslint --app --src-dir --turbopack --import-alias \"@/*\" --yes)"
+    ]
+  }
+}
